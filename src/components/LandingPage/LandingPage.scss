@@ -1,0 +1,15 @@
+.landing_page-container {
+
+    height: 85vh;
+    background-color: #142D62;
+
+    .landing-photo {
+        height: 75vh;
+        min-width: 100vw;
+        position: relative;
+        object-fit: cover;
+        display: inline-block;
+        opacity: 0.8;
+    }
+}
+
