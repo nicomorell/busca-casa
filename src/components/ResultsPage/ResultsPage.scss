@@ -1,0 +1,16 @@
+.pagina-resultados {
+    width: 100%;
+    padding: 5rem;
+    height: 100vh;
+    .filtro-izquierda {
+        width: 40%;
+        height: 100%;
+    }
+
+    .resultados-derecha {
+        width: 60%;
+        height: 100%;
+        display: inline-block;
+    }
+}
+

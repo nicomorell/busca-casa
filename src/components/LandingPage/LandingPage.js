@@ -44,7 +44,9 @@ export default function LandingPage(props) {
               
           </div>
           <div className = "search_button-container">
-            <button>Busca</button>
+              <a href = "/resultados">
+              <button>Busca</button>
+              </a>
           </div>
         </div>
     </div>
