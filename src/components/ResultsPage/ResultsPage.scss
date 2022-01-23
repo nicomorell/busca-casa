@@ -3,14 +3,57 @@
     padding: 5rem;
     height: 100vh;
     .filtro-izquierda {
-        width: 40%;
+        width: 20%;
         height: 100%;
+        float: left;
+        display: inline-block;
     }
 
     .resultados-derecha {
         width: 60%;
         height: 100%;
         display: inline-block;
+    
+        .image-listing {
+            display: inline-block;
+            overflow: hidden;
+            width: 220px;
+            height: 100%;
+            img {
+                background-size: cover;
+                overflow: none;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                margin: 0 auto;
+            }
+        }
+        .information-listing {
+            height: 100%;
+            width: 50%;
+            vertical-align: top;
+            overflow: hidden;
+            padding: 10px 35px 10px 15px;
+            display: inline-block;
+        
+        .listing-title, .listing-address {
+            position: relative;
+            width: 100%;
+            display: inline-block;
+            overflow: hidden;
+            
+        }
+        .listing-description {
+            overflow: hidden;
+            text-align: left;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+    }
     }
 }
 
