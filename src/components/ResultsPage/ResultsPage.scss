@@ -1,16 +1,30 @@
 .pagina-resultados {
-    width: 100%;
-    padding: 5rem;
+    padding: 0rem 5rem;
     height: 100vh;
+    .horizontal-results {
+        margin: 20px;
+    
+        .number-results {
+            display: inline-block;
+            float: left;
+        }
+        .order-by {
+            text-align: right;
+
+            span {
+                margin: 10px;
+            }
+        }
+}
     .filtro-izquierda {
-        width: 20%;
+        width: 25%;
         height: 100%;
         float: left;
         display: inline-block;
     }
 
     .resultados-derecha {
-        width: 60%;
+        width: 70%;
         height: 100%;
         display: inline-block;
     
@@ -31,6 +45,7 @@
         .information-listing {
             height: 100%;
             width: 50%;
+            position: relative;
             vertical-align: top;
             overflow: hidden;
             padding: 10px 35px 10px 15px;
@@ -42,6 +57,9 @@
             display: inline-block;
             overflow: hidden;
             
+        }
+        .listing-title {
+            font-weight: 500;
         }
         .listing-description {
             overflow: hidden;

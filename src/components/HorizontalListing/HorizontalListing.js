@@ -16,6 +16,7 @@ export default function HorizontalListing(listing) {
 
   return (
     <div className="horizontal_listing-container">
+      <span class="badge badge--new"><span>Nuevo</span></span>
       <div className="image-listing">
         <img src={listing.listingItem.defaultImage}></img>
       </div>
@@ -33,7 +34,7 @@ export default function HorizontalListing(listing) {
               alt="billing icon"
               src={SquaredMeters}
             />
-            <span>{listing.listingItem.area}</span>
+            <span>{listing.listingItem.area}m&#178;;</span>
           </div>
           <div>
             <img className="sidebar-icon" alt="billing icon" src={Bedrooms} />

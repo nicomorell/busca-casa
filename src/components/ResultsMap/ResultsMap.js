@@ -1,16 +1,18 @@
-import "./ResultsList.scss";
+import "./ResultsMap.scss";
 import { useState } from "react";
 import HorizontalListing from "../HorizontalListing/HorizontalListing"
-
+import {MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import 'leaflet/dist/leaflet.css';
+import markerIconPng from "leaflet/dist/images/marker-icon.png"
+import {Icon} from 'leaflet'
 import { useHistory } from "react-router";
 
-export default function ResultsList(props) {
+export default function ResultsMap(props) {
   const proxy = process.env.REACT_APP_PROXY_PRODUCTION
     ? process.env.REACT_APP_PROXY_PRODUCTION
     : process.env.REACT_APP_PROXY_DEVELOPMENT;
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+
 
   const listings = [
     {
@@ -22,6 +24,7 @@ export default function ResultsList(props) {
       furnished: "Si",
       address: "Julieta Morales",
       price: "720",
+      coordinates: [18.458782, -69.926112],
     },
     {
       title: "Casa Villa Mella",
@@ -32,6 +35,8 @@ export default function ResultsList(props) {
       furnished: "Si",
       address: "Villa Mella",
       price: "450",
+      coordinates: [18.461166, -69.944607],
+
     },
     {
       title: "Excelente, moderno apartamento",
@@ -42,6 +47,7 @@ export default function ResultsList(props) {
       furnished: "No",
       address: "Evaristo Morales",
       price: "900",
+      coordinates: [18.445239, -69.939161],
     },
     {
       title: "Apartmentamento Avenida Winston Churchill",
@@ -52,6 +58,7 @@ export default function ResultsList(props) {
       furnished: "Si",
       address: "Julieta Morales",
       price: "720",
+      coordinates: [18.473043, -69.930112],
     },
     {
       title: "Casa Villa Mella",
@@ -62,6 +69,7 @@ export default function ResultsList(props) {
       furnished: "Si",
       address: "Villa Mella",
       price: "450",
+      coordinates: [18.488582, -69.940851],
     },
     {
       title: "Excelente, moderno apartamento",
@@ -72,6 +80,8 @@ export default function ResultsList(props) {
       furnished: "No",
       address: "Evaristo Morales",
       price: "900",
+      coordinates: [18.499769, -69.904342],
+
     },
     {
       title: "Apartmentamento Avenida Winston Churchill",
@@ -82,6 +92,8 @@ export default function ResultsList(props) {
       furnished: "Si",
       address: "Julieta Morales",
       price: "720",
+      coordinates: [18.478558, -69.913690],
+
     },
     {
       title: "Casa Villa Mella",
@@ -92,6 +104,8 @@ export default function ResultsList(props) {
       furnished: "Si",
       address: "Villa Mella",
       price: "450",
+      coordinates: [18.478258, -69.913650],
+
     },
     {
       title: "Excelente, moderno apartamento",
@@ -102,23 +116,29 @@ export default function ResultsList(props) {
       furnished: "No",
       address: "Evaristo Morales",
       price: "900",
+      coordinates: [18.478578, -69.913553],
     }
   ];
+  const position = [18.478578, -69.913553]
 
   return (
-    <div className="">
-
+    <div>
+    <MapContainer center={[18.483402, -69.9312]} zoom={13}>
+      <TileLayer 
+        name="OpenStreetMap.HOT"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
+        url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+        attributionControl = "false"
+      />
       {listings &&
-        listings.map((listing, listingIndex) => {
-          return (
-            <HorizontalListing
-              className="justify-content-between"
-              onClick={() => console.log("TEST")}
-              listingItem={listing}
-            > 
-</HorizontalListing>
-          );
-        })}
-    </div>
+                  listings.map((listing, index) => {
+                  return <Marker position={listing.coordinates} icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})}> <Popup>
+                  A pretty CSS3 popup. <br /> Easily customizable.
+                </Popup></Marker>
+                  })
+                }
+
+    </MapContainer>
+  </div>
   );
 }

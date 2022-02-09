@@ -4,18 +4,57 @@
     text-align: left;
     box-shadow: 0 2px 17px 2px #2726261a;
     margin-bottom: 20px;
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    font-size: 10px;
+    font-size: .625rem;
+    font-weight: 800;
+    line-height: 27px;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.badge--new {
+    width: 60px;
+    color: #fff;
+    background-color: #e21f26;
+}
+.badge:after {
+    position: absolute;
+    content: "";
+    right: -5px;
+    top: 0;
+    height: 27px;
+    width: 10px;
+    transform: skew(-20deg);
+}
+
+.badge--new:after {
+    background-color: #e21f26;
 }
 
 .lower-information{
     vertical-align: middle;
     display: inline-flex;
     margin-top: 10px;
-    position: relative;
+    bottom: 25px;
+    position: absolute;
+    .sidebar-icon {
+        margin-right: 10px;
+    }
     div, span {
-        margin: 0px 10px;
+        margin: 0px 10px 0px 0px;
     }
     span {
         vertical-align: super;
+        font-weight: 500;
     }
 }
 
