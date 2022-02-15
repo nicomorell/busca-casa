@@ -1,0 +1,10 @@
+.large-image_container {
+    position: relative;
+    display: inline-block;
+    float: left;
+    top: 5rem;
+    width: 50%;
+    .carousel .thumbs-wrapper {
+        margin: unset;
+    }
+}

@@ -127,7 +127,7 @@ export default function ResultsMap(props) {
       <TileLayer 
         name="OpenStreetMap.HOT"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
-        url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+        url="https://api.mapbox.com/styles/v1/morell/ckznbtbwm000q14o7qvvitlwm/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibW9yZWxsIiwiYSI6ImNremVxMmtnOTFpenQyb2t1ZDF2bHhqMmUifQ.lhrWZK1DXK6kHCZO9UgQrg"
         attributionControl = "false"
       />
       {listings &&
