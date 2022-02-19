@@ -127,9 +127,16 @@ export default function ResultsMap(props) {
       <TileLayer 
         name="OpenStreetMap.HOT"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
-        url="https://api.mapbox.com/styles/v1/morell/ckznbtbwm000q14o7qvvitlwm/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibW9yZWxsIiwiYSI6ImNremVxMmtnOTFpenQyb2t1ZDF2bHhqMmUifQ.lhrWZK1DXK6kHCZO9UgQrg"
+        url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
         attributionControl = "false"
       />
+        <TileLayer 
+        name="OpenStreetMap.HOT"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
+        url="http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png"
+        attributionControl = "false"
+      />
+      
       {listings &&
                   listings.map((listing, index) => {
                   return <Marker position={listing.coordinates} icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41]})}> <Popup>
