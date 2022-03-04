@@ -1,6 +1,88 @@
+.filters-row {
+    padding: 0rem 5rem;
+    height: 3rem;
+    position: relative;
+    top: 4rem;
+    z-index: 999;
+    justify-content: space-between;
+    background: #11172b;
+    color: white;
+    display: flex;
+    
+    .location-input {
+        width: 25%;
+        margin: 0.3rem;
+    }
+    div, input{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    span {
+        padding: 0rem 1rem;
+        color: hsla(0,0%,100%,.5);
+        font-weight: 100;
+    }
+    select {
+        color: white;
+        border: none;
+        height: 100%;
+        font-size: 16px;
+        background-color: #11172b;
+    }
+    svg {
+        padding-left: 0.5rem;
+    }
+    path {
+        stroke: #f93e3e;
+        stroke-width: 2;
+    }
+}
+.properties-filter{
+    position: absolute;
+    width: 100%;
+    height: 0rem;
+    z-index: 998;
+    -moz-transition: height .5s;
+    -ms-transition: height .5s;
+    -o-transition: height .5s;
+    -webkit-transition: height .5s;
+    transition: height .5s;
+    background: red;
+
+    &.expand-properties {
+        -moz-transition: height .5s;
+        -ms-transition: height .5s;
+        -o-transition: height .5s;
+        -webkit-transition: height .5s;
+        transition: height .5s;
+        height: 25rem;
+    }
+}
+.more-filters {
+    position: absolute;
+    width: 100%;
+    height: 0rem;
+    z-index: 998;
+    -moz-transition: height .5s;
+    -ms-transition: height .5s;
+    -o-transition: height .5s;
+    -webkit-transition: height .5s;
+    transition: height .5s;
+    background: red;
+    &.expand-filters {
+        -moz-transition: height .5s;
+        -ms-transition: height .5s;
+        -o-transition: height .5s;
+        -webkit-transition: height .5s;
+        transition: height .5s;
+        height: 25rem;
+    }
+}
 .pagina-resultados {
     padding: 0rem 5rem;
     height: 100vh;
+    
     .horizontal-results {
         margin: 20px;
     

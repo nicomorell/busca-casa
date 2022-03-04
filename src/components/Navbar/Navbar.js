@@ -12,33 +12,37 @@ export default function Navbar(props) {
     : process.env.REACT_APP_PROXY_DEVELOPMENT;
     const [changeNavbar, setChangeNavbar] = useState(false);
     const [homePage, setHomePage] = useState(false)
+    const [propertyPage, setPropertyPage] = useState(false)
 
     const location = useLocation();
 
-    useEffect(()=>
-    { 
+    useEffect(()=>{ 
       console.log(location.pathname);
         if(location.pathname == '/'){
-        setHomePage(true);
+          setHomePage(true);
         }
-    },[location])
+        else if(location.pathname == '/main-property'){
+          setPropertyPage(true);
+        }
+        },[location])
     const changeNavbarSize = () => {
-      console.log(window.scrollY)
+      console.log(window.scrollY);
       if (window.scrollY >= 500) {
-        console.log("TEST");
         setChangeNavbar(true)
       } else {
         setChangeNavbar(false)
       }
     }
     useEffect(() => {
+      console.log("TEST");
       changeNavbarSize()
       // adding the event when scroll change background
       window.addEventListener("scroll", changeNavbarSize)
     })
+    
   return (
-    <div className={(changeNavbar ? "navbar-search" : "navbar-container") + (homePage ? " navbar-home" : "")}>
-      {!changeNavbar ? <> 
+    <div className={"navbar " + (changeNavbar && !propertyPage ? "navbar-search" : "navbar-container") + (homePage ? " navbar-home" : "") + (propertyPage ? " hidden" : "")}>
+      {!changeNavbar || propertyPage ? <> 
       <div className="navbar-logo">
         BUSCA CASA RD
       </div>

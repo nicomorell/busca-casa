@@ -16,7 +16,7 @@ export default function HorizontalListing(listing) {
 
   return (
     <div className="horizontal_listing-container">
-      <span class="badge badge--new"><span>Nuevo</span></span>
+      <span className="badge badge--new"><span>Nuevo</span></span>
       <div className="image-listing">
         <img src={listing.listingItem.defaultImage}></img>
       </div>
@@ -27,7 +27,7 @@ export default function HorizontalListing(listing) {
           {listing.listingItem.description}
         </div>
 
-        <div class="lower-information">
+        <div className="lower-information">
           <div>
             <img
               className="sidebar-icon"
