@@ -41,8 +41,8 @@ export default function Navbar(props) {
     })
     
   return (
-    <div className={"navbar " + (changeNavbar && !propertyPage ? "navbar-search" : "navbar-container") + (homePage ? " navbar-home" : "") + (propertyPage ? " hidden" : "")}>
-      {!changeNavbar || propertyPage ? <> 
+    <div className={"navbar navbar-container" + (homePage ? " navbar-home" : "") + (propertyPage ? " hidden" : "")}>
+      
       <div className="navbar-logo">
         BUSCA CASA RD
       </div>
@@ -53,10 +53,7 @@ export default function Navbar(props) {
         <div>
           Iniciar Sesion
         </div>
-      </div> </> : 
-      <SearchBar></SearchBar> 
-      }
+      </div>
     </div>
-      
   );
 }
