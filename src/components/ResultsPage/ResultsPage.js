@@ -9,18 +9,21 @@ import FarmLand from "../../assets/farm-land.svg"
 import House from "../../assets/house-door.svg"
 import Building from "../../assets/building.svg"
 import BriefCase from "../../assets/briefcase.svg"
-
 import GarageOutlinedIcon from '@mui/icons-material/GarageOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import FormControl from '@material-ui/core/FormControl';
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+import { useAdminContext } from '../../context/admin-context';
 
 
 export default function ResultsPage(props) {
+  var { searchEntry } = useAdminContext();
+
   const proxy = process.env.REACT_APP_PROXY_PRODUCTION
     ? process.env.REACT_APP_PROXY_PRODUCTION
     : process.env.REACT_APP_PROXY_DEVELOPMENT;
+
   const [expandProperties, setExpandProperties] = useState(false);
   const [expandFilters, setExpandFilters] = useState(false);
   const [propertyFilters, setPropertyFilters] = useState([]);
@@ -28,6 +31,7 @@ export default function ResultsPage(props) {
   const [furnishedFilters, setFurnishedFilters] = useState([]);
 
 console.log("propertyFilters");
+console.log(searchEntry);
 console.log(featuresFilters);
   return (
     <>
@@ -84,7 +88,7 @@ console.log(featuresFilters);
 
 <div className ={"property-filter " + (expandProperties ? "expanded" : "")}>
 <FormControl fullWidth>
-<div   onClick={() =>{setExpandProperties(!expandProperties); setExpandFilters(false)}} className = "test">
+<div onClick={() =>{setExpandProperties(!expandProperties); setExpandFilters(false)}} className = "test">
 Propiedades {expandProperties ? <ExpandLessIcon fill = "#f93e3e" /> : <ExpandMoreIcon fill = "#f93e3e" />}
 </div>
 </FormControl>

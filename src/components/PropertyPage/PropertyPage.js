@@ -1,4 +1,5 @@
 import "./PropertyPage.scss";
+
 import { useState, useEffect } from "react";
 import FilterList from "../FilterList/FilterList";
 import ResultsList from "../ResultsList/ResultsList";
@@ -9,6 +10,7 @@ import Share from "../../assets/share.svg";
 import Favourite from "../../assets/favourite.svg";
 import ChevronRight from "../../assets/chevron-right.svg";
 import ChevronLeft from "../../assets/chevron-left.svg";
+//import Fancybox from "./fancybox.js";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
@@ -71,11 +73,13 @@ export default function ResultsPage(props) {
     }
   }
   useEffect(() => {
-    changeNavbarSize()
+    changeNavbarSize();
 
     // adding the event when scroll change background
     window.addEventListener("scroll", changeNavbarSize);
   });
+  var images = [];
+
   return (
     <>
       <div className="main-property">
@@ -103,6 +107,7 @@ export default function ResultsPage(props) {
         </div>
 
         <div className="image-grid_container">
+
           {pictures
             .slice(pictureIndex, pictureIndex + 3)
             .concat(
@@ -114,21 +119,37 @@ export default function ResultsPage(props) {
                 : pictures.slice(0, pictures.length)
             )
             .map((listing, index) => {
+              console.log(listing);
+              if(index == 0) {
+                images = [];
+              }
               if (index < 3) {
+            
+                images.push(listing);
+
                 return (
                   <div class="image">
-                    <img src={listing}></img>
+                    <a  data-fancybox href={listing}>
+                      <img  src={listing}></img>
+                    </a>
                   </div>
                 );
               }
-            })}
-          {pictureIndex + 3 >= pictures.length
-            ? pictures
-                .slice(0, pictures + 3 - pictures.length)
-                .map((listing, index) => {
-                  return <img src={listing}></img>;
-                })
-            : ""}
+              else {
+                if(!images.includes(listing)) {
+                return (
+                  <div style={{display: "none"}}>
+                    <a  data-fancybox data-fancybox-group="gallery" href={listing}>
+                      <img src={listing}></img>
+                    </a>
+                  </div>
+                )
+                }
+              }
+            }
+            )
+            }
+        
         </div>
         <div className="property-information">
           <div className="property-title">{property.title}</div>

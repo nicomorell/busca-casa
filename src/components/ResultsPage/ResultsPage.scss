@@ -183,6 +183,7 @@
     .order-by {
       text-align: right;
       width: 75%;
+      padding-right: 1rem;
 
       span {
         margin: 10px;
@@ -191,7 +192,6 @@
   }
   .results-left {
     width: 65%;
-    height: 100%;
     float: left;
     padding: 1rem 0rem;
     padding-left: 6rem;

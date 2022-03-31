@@ -1,12 +1,23 @@
 import "./SearchBar.scss";
 import { useState } from "react";
+import { useAdminContext } from '../../context/admin-context';
+import { useNavigate } from 'react-router';
 
-import { useHistory } from "react-router";
 
 export default function LandingPage(props) {
+
+  var { searchEntry, setSearchEntry } = useAdminContext();
   const proxy = process.env.REACT_APP_PROXY_PRODUCTION
     ? process.env.REACT_APP_PROXY_PRODUCTION
     : process.env.REACT_APP_PROXY_DEVELOPMENT;
+    const [inputValue, updateInputValue] = useState(null);
+    const navigate = useNavigate();
+    function searchProperties() {
+      console.log(inputValue);
+      setSearchEntry(inputValue);
+      navigate('/resultados');
+      console.log(searchEntry);
+    }
 
 
   return (
@@ -33,15 +44,13 @@ export default function LandingPage(props) {
             </div>
           </div>
           <div className = "input-container">
-              <input placeholder = "¿Que quiere encontrar?" type="text" className = "input-search"></input>
+              <input onChange={evt => updateInputValue(evt.target.value)} placeholder = "¿Que quiere encontrar?" type="text" className = "input-search"></input>
           </div>
           <div className = "region-selector">
               
           </div>
           <div className = "search_button-container">
-              <a href = "/resultados">
-              <button>Busca</button>
-              </a>
+              <button onClick={() =>{searchProperties()}}>Busca</button>
           </div>
         </div>
     </div>
