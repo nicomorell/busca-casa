@@ -5,6 +5,8 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
 import Logo from "../../assets/logo.png";
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
 
 export default function Register(props) {
   const proxy = process.env.REACT_APP_PROXY_PRODUCTION
@@ -42,10 +44,11 @@ export default function Register(props) {
 
         <input placeholder="Email" type="text" className="input-register"></input>
       </div>
-      <div className="input-container">
-        <PhoneOutlinedIcon fill="#f93e3e" />
-
-        <input placeholder="Phone Number" type="text" className="input-register"></input>
+      <div className="input-phone_container">
+        <PhoneInput
+          country={'do'}
+          masks={{do: '(...) ...-....'}}
+        />
       </div>
       <div className="input-container">
         <LockOutlinedIcon fill="#f93e3e" />

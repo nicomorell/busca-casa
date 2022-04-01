@@ -1,63 +1,78 @@
 .navbar-search {
-    position: fixed;
-    width: 100%;
-    padding: 1rem;
-    z-index: 9999999999;
-    background-color: #11172b;
-    .search-container {
-        top: unset;
-    }
+  position: fixed;
+  width: 100%;
+  padding: 1rem;
+  z-index: 9999999999;
+
+  background-color: #11172b;
+  .search-container {
+    top: unset;
+  }
 }
 
 .navbar-container {
-    padding: 0.4rem 100px;
+  padding: 0.4rem 100px;
+  position: relative;
+  box-shadow: 0 1px 0 #c2cbd4;
+  background-color: white;
+  z-index: 545454;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  min-height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  &.navbar-home {
+    background: none;
+  }
+  &.hidden {
     position: relative;
-    background-color: #11172b;
-    z-index: 545454;
-    width: 100%;
-    box-sizing: border-box;
-    overflow: auto;
-    min-height: 3rem;
-    display: flex;
-    justify-content: space-between;
-    &.navbar-home {
-        background: none;
-    }
-    &.hidden {
-        position: relative;
-    }
-    .navbar-logo {
+  }
+  .navbar-logo {
     position: relative;
     float: left;
-    font-size: 40px;
+    font-size: 30px;
+    width: 25%;
     justify-content: left;
     order: 0;
-    color: white;
+    display: flex;
+    align-self: center;
+    color: #11172b;
     font-weight: bold;
     font-family: sans-serif;
-    }
-    
-    .navbar-components {
-        display: inline-flex;
-        flex-direction: row;
-        align-items: center;
-        position: relative;
+  }
 
-        div {
-            margin: 0rem 1.5rem;
-            color: white;
-            font-weight: bold;
-        }
-
-        .navbar-advert {
-            display: inline-block;
-            padding: 1rem;
-            align-self: flex-start;
-            position: relative;
-            background: #f93e3e;
-            text-transform: uppercase;
-            color: white;
-            border-radius: 10%;
-        }
+  .navbar-components {
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    float: right;
+    text-transform: uppercase;
+    .upper {
+      div {
+        width: 18%;
+        float: right;
+      }
     }
+
+    .lower {
+      div {
+        width: 18%;
+      }
+    }
+    div {
+      margin: 0rem 1.5rem;
+      color: #11172b;
+      display: inline-flex;
+      justify-content: end;
+      padding: 0.4rem 0rem;
+      font-size: 14px;
+      width: 100%;
+      font-weight: bold;
+    }
+
+    .navbar-advert {
+      color: #f93e3e;
+    }
+  }
 }

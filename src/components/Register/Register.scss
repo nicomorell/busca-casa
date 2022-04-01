@@ -2,24 +2,34 @@
   width: 25%;
   position: relative;
   margin: 0 auto;
-  padding-bottom: 3rem;
   box-shadow: 0 24px 64px #26214a1a;
-
+  position: absolute;
+  top: 50%;
+  padding: 2rem 0rem;
+  border-radius: 9px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -40%);
   .image-container {
-      img {
-          width: 250px;
-      }
+    img {
+      width: 150px;
+    }
   }
   .input-names {
-
     .input-container {
-        width: 45%;
+      width: 45%;
     }
     input {
       position: relative;
       display: inline-block;
-      
+
       width: 65%;
+    }
+  }
+  .input-phone_container {
+    padding: 0rem 1rem;
+    .react-tel-input .form-control {
+      width:100%;
     }
   }
   .input-container {
@@ -37,10 +47,10 @@
     }
   }
   .input-register {
-    background: transparent;
+    background: white;
     border-radius: 9px;
     margin: 1rem;
-    border: 1px solid #D6D9DD;
+    border: 1px solid #d6d9dd;
     height: 40px;
     outline: 1px solid transparent;
     transition: border 0.25s linear;
@@ -55,12 +65,12 @@
     width: 90%;
 
     &:hover {
-        border-color: #adb3bd;
+      border-color: #adb3bd;
     }
   }
 
   .button-register {
-    background: #3617e5;
+    background: #11172b;
     padding: 1rem;
     color: white;
     margin: 0 auto;

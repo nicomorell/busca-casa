@@ -50,11 +50,27 @@ export default function Navbar(props) {
         BUSCA CASA RD
       </div>
       <div className = "navbar-components">
-        <div className = "navbar-advert">
-          Publica un anuncio
+        <div className = "upper">
+        <div onClick={() =>{ navigate('/register')}}>
+          Español
         </div>
         <div onClick={() =>{ navigate('/register')}}>
           Iniciar Sesion
+        </div>
+        </div>
+        <div className = "lower">
+        <div className = "navbar-advert">
+          Publica un anuncio
+        </div>
+        <div className = "">
+          Encontrar Propiedad
+        </div>
+        <div className = "">
+          Por Que Nosotros?
+        </div>
+        <div className = "">
+          Contactanos
+        </div>
         </div>
       </div>
     </div>
