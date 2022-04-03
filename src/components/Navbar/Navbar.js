@@ -1,7 +1,9 @@
 import "./Navbar.scss";
 import { useState, useEffect } from "react";
 import LandingPhoto from "../../assets/landing-photo.jpg";
-import SearchBar from "../SearchBar/SearchBar"
+import Logo from "../../assets/buscacasa-horizontal.png";
+import LogoWhite from "../../assets/buscacasa-horizontal-white.png";
+
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router';
 
@@ -25,6 +27,11 @@ export default function Navbar(props) {
         }
         else if(location.pathname == '/main-property'){
           setPropertyPage(true);
+          setHomePage(false);
+
+        }
+        else {
+          setHomePage(false);
         }
         },[location])
     const changeNavbarSize = () => {
@@ -47,14 +54,14 @@ export default function Navbar(props) {
            
 
       <div  onClick={() =>{ navigate('/')}} className="navbar-logo">
-        BUSCA CASA RD
+        <img src = {homePage ? LogoWhite : Logo}></img>
       </div>
       <div className = "navbar-components">
         <div className = "upper">
         <div onClick={() =>{ navigate('/register')}}>
           Español
         </div>
-        <div onClick={() =>{ navigate('/register')}}>
+        <div onClick={() =>{ navigate('/sign-in')}}>
           Iniciar Sesion
         </div>
         </div>

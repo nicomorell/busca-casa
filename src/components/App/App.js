@@ -1,10 +1,12 @@
 import logo from "../../assets/logo.svg";
 import LandingPage from "../LandingPage/LandingPage";
 import { useState } from "react";
-
 import ResultsPage from "../ResultsPage/ResultsPage";
 import PropertyPage from "../PropertyPage/PropertyPage";
 import Register from "../Register/Register";
+import SignIn from "../SignIn/SignIn";
+import AccountSettings from "../AccountSettings/AccountSettings";
+
 
 import { AdminContext } from "../../context/admin-context";
 
@@ -30,6 +32,9 @@ function App() {
         <Routes>
           <Route path="/" exact element={<LandingPage></LandingPage>}></Route>
           <Route path="/resultados" exact element={<ResultsPage></ResultsPage>}></Route>
+          <Route path="/sign-in" exact element={<SignIn></SignIn>}></Route>
+          <Route path="/settings" exact element={<SignIn></SignIn>}></Route>
+
           <Route path="/main-property" exact element={<PropertyPage></PropertyPage>}></Route>
           <Route path="/register" exact element={<Register></Register>}></Route>
 

@@ -24,22 +24,28 @@
   justify-content: space-between;
   &.navbar-home {
     background: none;
+    box-shadow: none;
+    position: absolute;
+
+    .upper, .lower {
+
+      div {
+        color: white;
+
+      }
+    }
   }
   &.hidden {
     position: relative;
   }
   .navbar-logo {
-    position: relative;
-    float: left;
-    font-size: 30px;
-    width: 25%;
-    justify-content: left;
-    order: 0;
-    display: flex;
-    align-self: center;
-    color: #11172b;
-    font-weight: bold;
-    font-family: sans-serif;
+    height: 100px;
+    width: 340px;
+    overflow: hidden;
+    img {
+      height: 300px;
+      margin: -80px 0 0 0px;
+    }
   }
 
   .navbar-components {

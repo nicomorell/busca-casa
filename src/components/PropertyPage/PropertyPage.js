@@ -2,7 +2,7 @@ import "./PropertyPage.scss";
 
 import { useState, useEffect } from "react";
 import FilterList from "../FilterList/FilterList";
-import ResultsList from "../ResultsList/ResultsList";
+import ReactBnbGallery from 'react-bnb-gallery';
 import $ from "jquery";
 import Phone from "../../assets/phone.svg";
 import Whatsapp from "../../assets/whatsapp.svg";
@@ -79,9 +79,18 @@ export default function ResultsPage(props) {
     window.addEventListener("scroll", changeNavbarSize);
   });
   var images = [];
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
+          <button onClick={() => setIsOpen(true)}>
+          Open gallery
+        </button>
+        <ReactBnbGallery
+          show={isOpen}
+          photos={pictures}
+          onClose={() => setIsOpen(false)}
+        />
       <div className="main-property">
         <div className="image-button_container">
           <div

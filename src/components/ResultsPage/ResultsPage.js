@@ -140,7 +140,7 @@ Filtros {expandFilters ? <ExpandLessIcon fill = "#f93e3e"/> : <ExpandMoreIcon fi
     <div onClick={() => furnishedFilters.indexOf("Partial") == -1 ? setFurnishedFilters(furnishedFilters => [...furnishedFilters, ("Partial")])  : setFurnishedFilters(furnishedFilters.filter(word => word !== "Partial"))} className ={"filter-options " + (furnishedFilters.indexOf("Partial") > -1 ? "selected" : "")}>
       Parcial
     </div>
-    <div onClick={() => furnishedFilters.indexOf("kitchenFurnished") == -1 ? setFurnishedFilters(furnishedFilters => [...furnishedFilters, ("furnishedKitchen")])  : setFurnishedFilters(furnishedFilters.filter(word => word !== "furnishedKitchen"))} className ={"filter-options " + (furnishedFilters.indexOf("furnishedKitchen") > -1 ? "selected" : "")}>
+    <div onClick={() => furnishedFilters.indexOf("furnishedKitchen") == -1 ? setFurnishedFilters(furnishedFilters => [...furnishedFilters, ("furnishedKitchen")])  : setFurnishedFilters(furnishedFilters.filter(word => word !== "furnishedKitchen"))} className ={"filter-options " + (furnishedFilters.indexOf("furnishedKitchen") > -1 ? "selected" : "")}>
       Linea Blanca
     </div>
     </div>

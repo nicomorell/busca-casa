@@ -1,15 +1,15 @@
-.register-container {
+.sign-in-container {
   width: 25%;
   position: relative;
   margin: 0 auto;
   position: absolute;
   top: 50%;
-  background-color: #fafbfc;
   padding: 2rem 0rem;
+  background-color: #fafbfc;
   border-radius: 9px;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -40%);
+  transform: translate(-50%, -30%);
   .image-container {
     height: 200px;
     overflow: hidden;
@@ -86,6 +86,10 @@
     position: relative;
     top: 2rem;
     border-radius: 9px;
+  }
+  .register-text {
+    position: relative;
+    padding-top: 1.5rem;
   }
 }
 
