@@ -1,0 +1,6 @@
+export const views = {
+  SETTINGS: "SETTINGS",
+  PASSWORD: "PASSWORD",
+  NOTIFICATIONS: "NOTIFICATIONS",
+  HELP: "HELP",
+}

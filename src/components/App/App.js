@@ -33,7 +33,7 @@ function App() {
           <Route path="/" exact element={<LandingPage></LandingPage>}></Route>
           <Route path="/resultados" exact element={<ResultsPage></ResultsPage>}></Route>
           <Route path="/sign-in" exact element={<SignIn></SignIn>}></Route>
-          <Route path="/settings" exact element={<SignIn></SignIn>}></Route>
+          <Route path="/settings" exact element={<AccountSettings></AccountSettings>}></Route>
 
           <Route path="/main-property" exact element={<PropertyPage></PropertyPage>}></Route>
           <Route path="/register" exact element={<Register></Register>}></Route>
