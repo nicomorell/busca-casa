@@ -34,7 +34,7 @@ export default function AccountSettings(props) {
 
   return (
     <div>
-      <h3>Informacion General</h3>
+      <h3>Configurar Notificaciones</h3>
       <div className="input-container">
         <div className="input-wrapper">
           <span>Nombre</span>

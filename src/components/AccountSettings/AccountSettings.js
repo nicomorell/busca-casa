@@ -39,7 +39,7 @@ export default function AccountSettings(props) {
       </div>
       <div class="settings-container">
         <div className="left-panel">
-        <ListItem onClick={() => {setActiveItem('help'); setView(views.SETTINGS)}}  className = {`left-panel_text ${activeItem == 'account' ? 'active' : ''}`}>
+        <ListItem onClick={() => {setActiveItem('account'); setView(views.SETTINGS)}}  className = {`left-panel_text ${activeItem == 'account' ? 'active' : ''}`}>
             <ListItemIcon>
               <PersonOutlineOutlinedIcon fill="#6b6a7a" />
             </ListItemIcon>
@@ -47,7 +47,7 @@ export default function AccountSettings(props) {
               primary="Cuenta"
             />
           </ListItem>
-          <ListItem onClick={() => {setActiveItem('help'); setView(views.PASSWORD)}}  className = {`left-panel_text ${activeItem == 'password' ? 'active' : ''}`}>
+          <ListItem onClick={() => {setActiveItem('password'); setView(views.PASSWORD)}}  className = {`left-panel_text ${activeItem == 'password' ? 'active' : ''}`}>
             <ListItemIcon>
             <LockOutlinedIcon fill="#6b6a7a" />
             </ListItemIcon>
@@ -55,7 +55,7 @@ export default function AccountSettings(props) {
               primary="Contraseña"
             />
           </ListItem>
-          <ListItem onClick={() => {setActiveItem('help'); setView(views.NOTIFICATIONS)}}  className = {`left-panel_text ${activeItem == 'notifications' ? 'active' : ''}`}>
+          <ListItem onClick={() => {setActiveItem('notifications'); setView(views.NOTIFICATIONS)}}  className = {`left-panel_text ${activeItem == 'notifications' ? 'active' : ''}`}>
             <ListItemIcon>
             <NotificationsNoneOutlinedIcon fill="#6b6a7a" />
             </ListItemIcon>

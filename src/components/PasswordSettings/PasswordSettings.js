@@ -18,7 +18,10 @@ export default function PasswordSettings(props) {
     : process.env.REACT_APP_PROXY_DEVELOPMENT;
 
   const [userInformation, setUserInformation] = useState(null);
-  const [activeItem, setActiveItem] = useState("account");
+  const [passwordUppercase, setUppercase] = useState(null);
+  const [passwordLength, setPasswordLength] = useState(null);
+  const [passwordNumber, setPasswordNumber] = useState(null);
+
   const [view, setView] = useState(views.SETTINGS);
 
   const navigate = useNavigate();
@@ -30,40 +33,62 @@ export default function PasswordSettings(props) {
       telephone: "+1 849 274 3502",
     });
   }, []);
-  const handleChange = (event) => {};
+  const regexChecker = (password) => {
+    console.log(password);
+    if (password.length >= 8) {
+      setPasswordLength(true);
+    } else {
+      setPasswordLength(false);
+    }
+
+    var regex = /^(?=.*[A-Z]).+$/; // Uppercase character pattern
+
+    if (regex.test(password)) {
+      setUppercase(true);
+    } else {
+      setUppercase(false);
+    }
+    var regex = /^(?=.*[0-9_\W]).+$/; // Special character or number pattern
+
+    if (regex.test(password)) {
+      setPasswordNumber(true);
+    } else {
+      setPasswordNumber(false);
+    }
+  };
 
   return (
-    <div>
-      <h3>Informacion General</h3>
+    <div className="password-wrapper">
+      <h3>Cambiar Contraseña</h3>
+      <div className="password-container">
+
       <div className="input-container">
         <div className="input-wrapper">
-          <span>Nombre</span>
+          <span>Contraseña Actual</span>
+          <input type="password" />
+        </div>
+        <div className="input-wrapper">
+          <span>Contraseña Nueva</span>
           <input
-            name={userInformation && userInformation.first_name}
-            value={userInformation && userInformation.first_name}
+            type="password"
+            onChange={(evt) => regexChecker(evt.target.value)}
           />
         </div>
         <div className="input-wrapper">
-          <span>Apellido</span>
-          <input
-            name={userInformation && userInformation.last_name}
-            value={userInformation && userInformation.last_name}
-          />
+          <span>Confirmar Contraseña</span>
+          <input type="password" />
         </div>
-        <div className="input-wrapper">
-          <span>Correo Electronico</span>
-          <input
-            name={userInformation && userInformation.email}
-            value={userInformation && userInformation.email}
-          />
+      </div>
+      <div className = "regex-list">
+        <div className = "regex-container">
+        <span>Contraseña debe tener:</span>
+        <div>
+          <li className = {`${passwordLength && 'active'}`}>8+ characteres</li>
+          <li className = {`${passwordNumber && 'active'}`}>1+ numero</li>
+          <li className = {`${passwordUppercase && 'active'}`}>1+ letra mayuscula</li>
         </div>
-        <div className="input-wrapper">
-          <span>Numero</span>
-          <input
-            name={userInformation && userInformation.telephone}
-            value={userInformation && userInformation.telephone}
-          />
         </div>
+      </div>
       </div>
     </div>
   );

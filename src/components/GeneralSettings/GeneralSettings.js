@@ -33,7 +33,7 @@ export default function AccountSettings(props) {
   const handleChange = (event) => {};
 
   return (
-    <div>
+    <div className = "general-wrapper">
       <h3>Informacion General</h3>
       <div className="input-container">
         <div className="input-wrapper">
