@@ -6,6 +6,7 @@ import PropertyPage from "../PropertyPage/PropertyPage";
 import Register from "../Register/Register";
 import SignIn from "../SignIn/SignIn";
 import AccountSettings from "../AccountSettings/AccountSettings";
+import Account from "../Account/Account";
 
 
 import { AdminContext } from "../../context/admin-context";
@@ -34,6 +35,7 @@ function App() {
           <Route path="/resultados" exact element={<ResultsPage></ResultsPage>}></Route>
           <Route path="/sign-in" exact element={<SignIn></SignIn>}></Route>
           <Route path="/settings" exact element={<AccountSettings></AccountSettings>}></Route>
+          <Route path="/account" exact element={<Account></Account>}></Route>
 
           <Route path="/main-property" exact element={<PropertyPage></PropertyPage>}></Route>
           <Route path="/register" exact element={<Register></Register>}></Route>

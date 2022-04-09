@@ -1,0 +1,61 @@
+.account-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  height: 60%;
+
+  .top-information {
+    text-align: left;
+    padding: 2rem 0rem;
+    h1 {
+      color: #212433;
+      font-weight: 700;
+    }
+    h3 {
+      color: #6d6d7b;
+      font-weight: 400;
+    }
+  }
+  .accordion {
+    margin: 1rem 0rem;
+    width: 70%;
+    .accordion-title_wrapper {
+      display: flex;
+      img {
+        width: 28px;
+      }
+      .accordion-title {
+        font-size: 20px;
+        padding: 1rem;
+        font-weight: 600;
+      }
+    }
+  .properties-saved {
+    height: 300px;
+    background: #F4F4F5;
+    width: 100%;
+    margin: 1rem;
+    position: relative;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: table;
+    .empty {
+      vertical-align: middle;
+      position: relative;
+      display: table-cell;
+      img {
+        width: 5%;
+      }
+
+      .search-properties {
+        background-color: #fff;
+        border: 2px solid #185ab9;
+        color: #262637;
+        border-radius: 8px;
+        width: 15%;
+        margin: 0 auto;
+        padding: 10px 16px;
+      }
+    }
+  }
+  }
+}
