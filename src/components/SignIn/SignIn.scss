@@ -10,6 +10,21 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -30%);
+  h2 {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #11172b; 
+    color: #11172b;
+    line-height: 0.1em;
+    margin: 2rem 0rem; 
+    padding-top: 2rem;
+  } 
+  
+  h2 span { 
+     background:#fff; 
+     padding:0 10px; 
+  }
+  
   .image-container {
     height: 200px;
     overflow: hidden;
@@ -91,19 +106,4 @@
     position: relative;
     padding-top: 1.5rem;
   }
-}
-
-h2 {
-  width: 100%; 
-  text-align: center; 
-  border-bottom: 1px solid #11172b; 
-  color: #11172b;
-  line-height: 0.1em;
-  margin: 2rem 0rem; 
-  padding-top: 2rem;
-} 
-
-h2 span { 
-   background:#fff; 
-   padding:0 10px; 
 }

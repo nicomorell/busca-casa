@@ -10,6 +10,21 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -40%);
+  h2 {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #11172b; 
+    color: #11172b;
+    line-height: 0.1em;
+    margin: 2rem 0rem; 
+    padding-top: 2rem;
+  } 
+  
+  h2 span { 
+     background:#fff; 
+     padding:0 10px; 
+  }
+  
   .image-container {
     height: 200px;
     overflow: hidden;
@@ -87,19 +102,4 @@
     top: 2rem;
     border-radius: 9px;
   }
-}
-
-h2 {
-  width: 100%; 
-  text-align: center; 
-  border-bottom: 1px solid #11172b; 
-  color: #11172b;
-  line-height: 0.1em;
-  margin: 2rem 0rem; 
-  padding-top: 2rem;
-} 
-
-h2 span { 
-   background:#fff; 
-   padding:0 10px; 
 }
