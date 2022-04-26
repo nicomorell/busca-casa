@@ -148,6 +148,9 @@ export default function Account(props) {
                     listings.map((listing, listingIndex) => {
                       return (
                         <div className="saved-container">
+                          <div className = "image-container">
+                            <img src = {listing.defaultImage} />
+                            </div>
                           <p>{listing.address}</p>
                           <div className="lower-information">
                             <div>
@@ -175,7 +178,7 @@ export default function Account(props) {
                               <span>{listing.furnished}</span>
                             </div>
                           </div>
-                          <p>{listing.price}</p>
+                          <span>{listing.price}</span>
 
                         </div>
                       );

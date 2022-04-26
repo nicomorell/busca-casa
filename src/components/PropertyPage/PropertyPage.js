@@ -1,8 +1,7 @@
 import "./PropertyPage.scss";
 
 import { useState, useEffect } from "react";
-import FilterList from "../FilterList/FilterList";
-import ReactBnbGallery from 'react-bnb-gallery';
+import PropertyGallery from "../PropertyGallery/PropertyGallery";
 import $ from "jquery";
 import Phone from "../../assets/phone.svg";
 import Whatsapp from "../../assets/whatsapp.svg";
@@ -11,8 +10,9 @@ import Favourite from "../../assets/favourite.svg";
 import ChevronRight from "../../assets/chevron-right.svg";
 import ChevronLeft from "../../assets/chevron-left.svg";
 //import Fancybox from "./fancybox.js";
-
+import { views } from '../../helpers/app-views';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { useNavigate } from 'react-router';
 
 export default function ResultsPage(props) {
   const proxy = process.env.REACT_APP_PROXY_PRODUCTION
@@ -22,6 +22,9 @@ export default function ResultsPage(props) {
   var [pictureIndex, setPictureIndex] = useState(0);
   const [changeNavbar, setChangeNavbar] = useState(false);
   const [position, setPosition] = useState(null);
+  const [gallery, setGallery] = useState(null);
+  const [view, setView] = useState(views.MAINPROPERTY);
+  const navigate = useNavigate();
 
   var agentInformation = {
     name: "Nicole Rodriguez",
@@ -59,7 +62,9 @@ export default function ResultsPage(props) {
   };
   const changeNavbarSize = () => {
     //console.log(window.scrollY)
+    console.log(view);
 
+    if(view == 'MAINPROPERTY') {
     const priceOffset = $(".property-information").offset();
     const navbarOffset = $(".navbar").offset()
 
@@ -72,6 +77,7 @@ export default function ResultsPage(props) {
       setChangeNavbar(false)
     }
   }
+  }
   useEffect(() => {
     changeNavbarSize();
 
@@ -79,18 +85,12 @@ export default function ResultsPage(props) {
     window.addEventListener("scroll", changeNavbarSize);
   });
   var images = [];
-  const [isOpen, setIsOpen] = useState(false);
-
+  console.log("VIEW IS");
+  console.log(view);
   return (
     <>
-          <button onClick={() => setIsOpen(true)}>
-          Open gallery
-        </button>
-        <ReactBnbGallery
-          show={isOpen}
-          photos={pictures}
-          onClose={() => setIsOpen(false)}
-        />
+      {view === views.MAINPROPERTY && (
+
       <div className="main-property">
         <div className="image-button_container">
           <div
@@ -138,8 +138,12 @@ export default function ResultsPage(props) {
 
                 return (
                   <div class="image">
-                    <a  data-fancybox href={listing}>
-                      <img  src={listing}></img>
+                    <a>
+                      <img       
+                      onClick={() =>{ navigate('/main-property/gallery')}}
+                      src={listing}>
+
+                      </img>
                     </a>
                   </div>
                 );
@@ -148,7 +152,7 @@ export default function ResultsPage(props) {
                 if(!images.includes(listing)) {
                 return (
                   <div style={{display: "none"}}>
-                    <a  data-fancybox data-fancybox-group="gallery" href={listing}>
+                    <a href={listing}>
                       <img src={listing}></img>
                     </a>
                   </div>
@@ -217,6 +221,12 @@ export default function ResultsPage(props) {
           </div>
         </div>
       </div>
+      )};
+     {view === views.GALLERY && (
+          <PropertyGallery
+          changeView={setView}
+        />
+      )}
     </>
   );
 }

@@ -116,7 +116,7 @@ export default function ResultsList(props) {
               onClick={() => console.log("TEST")}
               listingItem={listing}
             > 
-</HorizontalListing>
+            </HorizontalListing>
           );
         })}
     </div>

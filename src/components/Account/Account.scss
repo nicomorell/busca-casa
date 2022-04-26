@@ -43,17 +43,34 @@
         .saved-wrapper {
           .saved-container {
             position: relative;
-            width: 25%;
-            display: inline-grid;
-            height: 350px;
+            width: 20%;
+            display: inline-block;
+            height: 310px;
+            overflow: hidden;
+            margin: 0rem 1rem;
+            border-radius: 9px;
+            border: 2px solid #dfdfdf;
+            .image-container {
+              position: relative;
+              display: inline;
+              overflow: hidden;
+              height: 100%;
+              img {
+                object-fit: cover;
+                overflow: hidden;
+                height: 40%;
+                width: 100%;
+                margin: 0 auto;
+              }
+
+            }
             .lower-information {
               position: relative;
               display: flex;
-              margin-top: 10px;
+              margin-top: 3rem;
               vertical-align: bottom;
               bottom: 25px;
-              flex-wrap: wrap;
-              justify-content: end;
+              justify-content: center;
               align-items: end;
             }
           }
