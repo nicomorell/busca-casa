@@ -29,14 +29,26 @@
     display: flex;
     justify-content: center;
     height: 100%;
-    width: 65%;
+    width: 75%;
     padding-top: 5rem;
     align-items: flex-start;
-    .swiper-backface-hidden .swiper-slide {
-      height: auto;
+    .swiper-backface-hidden {
+      margin: 0rem 9rem;
+      .swiper-slide {
+        height: auto;
+      }
     }
     .main-image_container {
-      width: 75%;
+      width: 100%;
+      align-items: center;
+      display: inline-flex;
+      svg {
+        display: inline-flex;
+        width: 300px;
+        height: 11rem;
+        margin: 1rem;
+        fill: grey;
+      }
       img {
         position: relative;
         object-fit: cover;

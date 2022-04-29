@@ -8,6 +8,7 @@ import PropertyGallery from "../PropertyGallery/PropertyGallery";
 import SignIn from "../SignIn/SignIn";
 import AccountSettings from "../AccountSettings/AccountSettings";
 import Account from "../Account/Account";
+import Inbox from "../Inbox/Inbox";
 
 
 import { AdminContext } from "../../context/admin-context";
@@ -40,6 +41,7 @@ function App() {
           <Route path="/main-property/gallery" exact element={<PropertyGallery></PropertyGallery>}></Route>
           <Route path="/main-property" exact element={<PropertyPage></PropertyPage>}></Route>
           <Route path="/register" exact element={<Register></Register>}></Route>
+          <Route path="/inbox" exact element={<Inbox></Inbox>}></Route>
 
         </Routes>
         </AdminContext.Provider>

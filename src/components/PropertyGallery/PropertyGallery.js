@@ -5,8 +5,8 @@ import Phone from "../../assets/phone.svg";
 import Whatsapp from "../../assets/whatsapp.svg";
 import _indexOf from 'lodash/indexOf';
 import Favourite from "../../assets/favourite.svg";
-import ChevronRight from "../../assets/chevron-right.svg";
-import ChevronLeft from "../../assets/chevron-left.svg";
+import { ReactComponent as ChevronRight } from "../../assets/chevron-right.svg";
+import { ReactComponent as ChevronLeft } from "../../assets/chevron-left.svg";
 //import Fancybox from "./fancybox.js";
 import { views } from '../../helpers/app-views';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -83,10 +83,10 @@ export default function PropertyGallery(props) {
         </div>
         </div>
         <div className ="right-panel">
-        <img onClick= {() => swiperRef.current.swiper.slidePrev()} src={ChevronLeft}></img>
-
 
           <div className ="main-image_container">
+          <ChevronLeft onClick= {() => swiperRef.current.swiper.slidePrev()} />
+
           <Swiper
       // install Swiper modules
       spaceBetween={50}
@@ -108,11 +108,13 @@ export default function PropertyGallery(props) {
         }
     
     </Swiper>
+    <ChevronRight onClick= {() => swiperRef.current.swiper.slideNext()} />
+
           </div>
+
         </div>
         <div className="image-button_container">
         </div>
-        <img onClick= {() => swiperRef.current.swiper.slideNext()} src={ChevronRight}></img>
       </div>
     </>
   );
