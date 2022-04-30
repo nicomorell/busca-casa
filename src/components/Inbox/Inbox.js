@@ -28,34 +28,80 @@ export default function Inbox(props) {
   ];
   var [pictureIndex, setPictureIndex] = useState(0);
   const [changeNavbar, setChangeNavbar] = useState(false);
-  const [mainImage, setMainImage] = useState(pictures[0]);
+  const [active, setActive] = useState(null);
   const [currentUser, setCurrentUser] = useState(1);
   const [view, setView] = useState(views.GALLERY);
 
   var properties = [
     {
+      id:1,
       name: "Casa Villa Mella",
       message: "This is one of the messages of the chat",
-      picture:
-        "https://img3.idealista.com/blur/WEB_LISTING-M/0/id.pro.es.image.master/b4/c4/75/940265562.jpg",
+      picture: "https://img3.idealista.com/blur/WEB_LISTING-M/0/id.pro.es.image.master/b4/c4/75/940265562.jpg",
+      notification: true,
+
     },
     {
+      id:2,
       name: "Casa Villa Mella",
       message: "This is one of the messages of the chat",
-      picture:
-        "https://img3.idealista.com/blur/WEB_LISTING-M/0/id.pro.es.image.master/b4/c4/75/940265562.jpg",
+      picture:"https://img3.idealista.com/blur/WEB_LISTING-M/0/id.pro.es.image.master/b4/c4/75/940265562.jpg",
+      notification: true,
+
     },
     {
+      id:3,
       name: "Casa Villa Mella",
       message: "This is one of the messages of the chat",
       picture:
         "https://img3.idealista.com/blur/WEB_LISTING-M/0/id.pro.es.image.master/b4/c4/75/940265562.jpg",
+        notification: false,
+
     },
     {
+      id:4,
       name: "Casa Villa Mella",
       message: "This is one of the messages of the chat",
       picture:
         "https://img3.idealista.com/blur/WEB_LISTING-M/0/id.pro.es.image.master/b4/c4/75/940265562.jpg",
+        notification: true,
+
+    },
+    {
+      id:5,
+      name: "Casa Villa Mella",
+      message: "This is one of the messages of the chat",
+      picture:
+        "https://img3.idealista.com/blur/WEB_LISTING-M/0/id.pro.es.image.master/b4/c4/75/940265562.jpg",
+        notification: false,
+
+    },
+    {
+      id:6,
+      name: "Casa Villa Mella",
+      message: "This is one of the messages of the chat",
+      picture:
+        "https://img3.idealista.com/blur/WEB_LISTING-M/0/id.pro.es.image.master/b4/c4/75/940265562.jpg",
+        notification: false,
+
+    },
+    {
+      id:7,
+      name: "Casa Villa Mella",
+      message: "This is one of the messages of the chat",
+      picture:
+        "https://img3.idealista.com/blur/WEB_LISTING-M/0/id.pro.es.image.master/b4/c4/75/940265562.jpg",
+        notification: false,
+
+    },
+    {
+      id:8,
+      name: "Casa Villa Mella",
+      message: "This is one of the messages of the chat",
+      picture:
+        "https://img3.idealista.com/blur/WEB_LISTING-M/0/id.pro.es.image.master/b4/c4/75/940265562.jpg",
+        notification: false,
+
     },
   ];
   const swiperRef = useRef(null);
@@ -98,21 +144,48 @@ export default function Inbox(props) {
       picture:
         "https://img3.idealista.com/blur/WEB_LISTING-M/0/id.pro.es.image.master/b4/c4/75/940265562.jpg",
       time: "28/04/2022 20:16",
+    },,
+    {
+      name: "Nico",
+      id: "1",
+      message: "This is one of the messages of the chat",
+      picture:
+        "https://img3.idealista.com/blur/WEB_LISTING-M/0/id.pro.es.image.master/b4/c4/75/940265562.jpg",
+      time: "28/04/2022 20:16",
     },
+    {
+      name: "Agente",
+      id: "99",
+      message: "This is one of the messages of the chat",
+      picture:
+        "https://img3.idealista.com/blur/WEB_LISTING-M/0/id.pro.es.image.master/b4/c4/75/940265562.jpg",
+      time: "28/04/2022 20:16",
+    },
+    {
+      name: "Nico",
+      id: "1",
+      message: "This is one of the messages of the chat",
+      picture:
+        "https://img3.idealista.com/blur/WEB_LISTING-M/0/id.pro.es.image.master/b4/c4/75/940265562.jpg",
+      time: "28/04/2022 20:16",
+    }
+
   ];
   return (
     <>
-      <div className="main-gallery_container">
+      <div className="main-inbox_container">
         <div className="left-panel">
           <div className="image-grid_container">
             {properties.map((property, index) => {
               return (
-                <div class="message-container">
+                <div  onClick={() =>setActive(property.id)} className={`message-container ${active == property.id ? 'active' : ''}`}>
                   <img src={property.picture}></img>
                   <div className="text-container">
                     <div>{property.name}</div>
                     <span>{property.message}</span>
                   </div>
+                  {property.notification ? <span className = "notification"></span> : ''}
+
                 </div>
               );
             })}
@@ -136,14 +209,21 @@ export default function Inbox(props) {
                     <div className = "text-message">{message.message}</div>
                     <div className="lower-message_container">
                       <img src={message.picture} />
-                      <div>{message.name}</div>
+                      <div className = "message-name">{message.name}</div>
                       <div>{message.time}</div>
                     </div>
                   </div>
                 ),
               ];
             })}
+
           </div>
+          <div className = "write-area">
+              <textarea placeholder="Write here">
+
+              </textarea>
+              <button>Send</button>
+              </div>
         </div>
         <div className="image-button_container"></div>
       </div>
