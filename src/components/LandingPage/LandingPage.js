@@ -1,10 +1,12 @@
 import "./LandingPage.scss";
 import { useState } from "react";
 import LandingPhoto from "../../assets/landing-photo.jpg";
+import LandingVideo from "../../assets/landing_video.mp4";
+
 import SearchBar from "../SearchBar/SearchBar"
 
 import { useHistory } from "react-router";
-import LandingStatistics from "../LandingStatistics/LandingStatistics";
+import ListingType from "../ListingType/ListingType";
 import FeaturedRent from "../FeaturedRent/FeaturedRent";
 import FeaturedSell from "../FeaturedSell/FeaturedSell";
 
@@ -15,15 +17,22 @@ export default function LandingPage(props) {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  window.addEventListener('load', async () => {
+    let video = document.querySelector('video');
+    try {
+      await video.play();
+    } catch (err) {
+    }
+  });
   return (
-    <div>
+    <div class = "container">
       <div className="landing_page-container">
-        <img className="landing-photo" src={LandingPhoto}>
-        </img>
+        <video className ="landing-photo" muted autoplay loop playsinline>
+          <source src={`${LandingVideo}#t=5`} type="video/mp4"/>
+        </video>
         <SearchBar></SearchBar>
       </div>
-      <LandingStatistics></LandingStatistics>
+      <ListingType></ListingType>
       <FeaturedRent></FeaturedRent>
       <FeaturedSell></FeaturedSell>
 

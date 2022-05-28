@@ -1,0 +1,50 @@
+.listing-type_container {
+  background-color: white;
+  padding-bottom: 2rem;
+  .listing-type_wrapper {
+    position: relative;
+    margin: -60px 56px 0;
+    background: white;
+    display: block;
+    border-radius: 15px;
+
+  .saved-wrapper {
+      h1 {
+        padding-top: 1rem;
+        font-size: 1.8rem;
+        text-align: left;
+        margin-left: 5rem;
+      }
+
+    .saved-container {
+      position: relative;
+      background-color: white;
+      width: 20%;
+      display: inline-block;
+      text-align: left;
+      overflow: hidden;
+      margin: 0rem 1rem;
+      border-radius: 5px;
+      .image-container {
+        position: relative;
+        display: inline;
+        overflow: hidden;
+        height: 100%;
+        img {
+          object-fit: cover;
+          overflow: hidden;
+          min-height: 350px;
+          width: 100%;
+          margin: 0 auto;
+        }
+      }
+      .province-information {
+        margin-top: 0.5rem;
+        .title {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+}

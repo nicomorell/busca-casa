@@ -9,6 +9,7 @@ import SignIn from "../SignIn/SignIn";
 import AccountSettings from "../AccountSettings/AccountSettings";
 import Account from "../Account/Account";
 import Inbox from "../Inbox/Inbox";
+import Footer from "../Footer/Footer";
 
 
 import { AdminContext } from "../../context/admin-context";
@@ -45,7 +46,10 @@ function App() {
 
         </Routes>
         </AdminContext.Provider>
+        <Footer></Footer>
+
     </div>
+
   );
 }
 

@@ -24,7 +24,12 @@
         }
       }
       .text-information {
-        margin: 1rem;
+        .address {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+        }
         .prices {
           text-align: left;
           .original {
@@ -43,7 +48,6 @@
         .lower-information {
           position: relative;
           display: flex;
-          margin-top: 3rem;
           vertical-align: bottom;
           bottom: 25px;
           justify-content: flex-start;

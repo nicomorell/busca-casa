@@ -76,7 +76,7 @@ export default function Navbar(props) {
           Por Que Nosotros?
         </div>
         <div className = "">
-          Contactanos
+          Contáctanos
         </div>
         </div>
       </div>

@@ -1,15 +1,38 @@
-.landing-featured-sell {
-  .saved-wrapper {
+.landing-featured-rent {
+  background-color: white;
+  .saved-w {
+    position: relative;
+    padding: 0rem 7rem;
+    .react-multiple-carousel__arrow {
+      top: 45%;
+    }
+    .react-multi-carousel-item  {
+      display: flex;
+      justify-content: center;
+    }
+
+    .react-multi-carousel-list {
+
+      .react-multiple-carousel__arrow--right {
+        right: 0rem !important;
+      }
+      .react-multiple-carousel__arrow--left {
+        left: 0rem  !important;
+      }
+    }
     .saved-container {
       position: relative;
       background-color: white;
-      width: 20%;
+      width: 95%;
       display: inline-block;
       text-align: left;
-      height: 500px;
       overflow: hidden;
-      margin: 0rem 5rem;
-      border-radius: 9px;
+      border-radius: 5px;
+
+      div {
+          margin: 0.2rem 0rem;
+        
+      }
       .image-container {
         position: relative;
         display: inline;
@@ -24,30 +47,45 @@
         }
       }
       .text-information {
-        margin: 1rem;
+        .address {
+          overflow: hidden;
+          display: -webkit-box;
+          font-weight: bold;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+        }
         .prices {
           text-align: left;
           .original {
-            font-size: 20px;
+            font-size: 17px;
+            font-weight: bold;
           }
           .converted {
-            font-size: 15px;
+            font-size: 17px;
           }
         }
         .description {
           overflow: hidden;
           display: -webkit-box;
           -webkit-line-clamp: 2;
+          min-height: 2.5rem;
           -webkit-box-orient: vertical;
         }
         .lower-information {
           position: relative;
           display: flex;
-          margin-top: 3rem;
+          color:#6c6b6b;
           vertical-align: bottom;
-          bottom: 25px;
           justify-content: flex-start;
-          align-items: end;
+          align-items: center;
+
+          div {
+            margin-right: 0.25rem;
+            &:not(:first-child) {
+              margin-left: 0.25rem;
+
+            }
+          }
         }
       }
     }
@@ -57,7 +95,7 @@
       width: 100%;
       margin: 1rem;
       position: relative;
-      border-radius: 10px;
+      border-radius: 5px;
       margin: 0 auto;
       display: table;
       .empty {
