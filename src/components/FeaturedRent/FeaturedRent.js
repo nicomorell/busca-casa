@@ -32,7 +32,7 @@ export default function FeaturedRent(props) {
         title: "Casa Villa Mella",
         area: 24,
         defaultImage:
-          "https://img3.idealista.com/blur/WEB_LISTING-M/0/id.pro.es.image.master/b4/c4/75/940265562.jpg",
+          "https://www.casadecampo.com.do/wp-content/uploads/2019/06/Costa-Mar-Oceanfront-Villa.jpg",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a quam augue. Proin commodo efficitur lectus, sed laoreet sapien tristique sit amet. Proin eu pharetra elit. Cras malesuada, sem eu efficitur dapibus, sapien elit semper purus, feugiat tempus erat erat vel dui. Nam magna nulla, sodales nec felis eu, pulvinar auctor sapien",
         bedrooms: 4,
@@ -55,7 +55,7 @@ export default function FeaturedRent(props) {
         title: "Apartmentamento Avenida Winston Churchill",
         area: 60,
         defaultImage:
-          "https://media.istockphoto.com/photos/home-with-blue-siding-and-stone-faade-on-base-of-home-picture-id1272128530?b=1&k=20&m=1272128530&s=170667a&w=0&h=k9lT5-DEmkmehDb-EKRHoP1-op2DTgz4ibiWGXmj7h8=",
+          "https://pic.le-cdn.com/thumbs/520x390/101/1/properties/Property-92d8d2726b06e4d41cd75727440e5eda-19206121.jpg",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a quam augue. Proin commodo efficitur lectus, sed laoreet sapien tristique sit amet. Proin eu pharetra elit. Cras malesuada, sem eu efficitur dapibus, sapien elit semper purus, feugiat tempus erat erat vel dui. Nam magna nulla, sodales nec felis eu, pulvinar auctor sapien",
         bedrooms: 2,
@@ -120,10 +120,10 @@ export default function FeaturedRent(props) {
   return (
     
 <div className="landing-featured-rent">
-
-  <h1>Featured Listings For Sale</h1>
   
  <div className="saved-w">
+ <h1>Featured Listings For Sale</h1>
+
  <Carousel
 arrows={false}
 centerMode={false}

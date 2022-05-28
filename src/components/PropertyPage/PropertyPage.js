@@ -175,7 +175,7 @@ export default function ResultsPage(props) {
 
             <ul>
               {property.features.map((feature, index) => {
-                return <li>{feature}</li>;
+                return <li>{feature}</li>
               })}
             </ul>
           </div>
@@ -221,12 +221,12 @@ export default function ResultsPage(props) {
           </div>
         </div>
       </div>
-      )};
+      )}
      {view === views.GALLERY && (
           <PropertyGallery
           changeView={setView}
         />
       )}
     </>
-  );
+  )
 }

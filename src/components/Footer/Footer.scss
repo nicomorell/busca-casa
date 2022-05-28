@@ -1,8 +1,12 @@
 .footer-container {
   display: block;
   width: 100%;
+
+  &.hidden {
+    display: none;
+  }
   .footer-wrapper {
-    position: fixed;
+    position: static;
     bottom: 0px;
     display: flex;
     justify-content: space-evenly;

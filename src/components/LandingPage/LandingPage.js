@@ -1,5 +1,5 @@
 import "./LandingPage.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import LandingPhoto from "../../assets/landing-photo.jpg";
 import LandingVideo from "../../assets/landing_video.mp4";
 
@@ -24,6 +24,15 @@ export default function LandingPage(props) {
     } catch (err) {
     }
   });
+  
+  useEffect(()=>{ 
+    let video = document.querySelector('video');
+
+    try {
+      video.play();
+    } catch (err) {
+    }
+      },[])
   return (
     <div class = "container">
       <div className="landing_page-container">

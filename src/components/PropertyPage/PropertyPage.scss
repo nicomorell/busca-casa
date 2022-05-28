@@ -1,6 +1,7 @@
 .main-property {
   margin: 0rem 240px;
-  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
   .large-image_container {
     position: relative;
     display: inline-block;
@@ -133,6 +134,8 @@
     }
     .description {
       white-space: pre-line;
+      min-height: 15rem;
+      padding-bottom: 8rem;
     }
   }
   .right {

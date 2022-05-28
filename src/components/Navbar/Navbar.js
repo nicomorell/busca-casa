@@ -23,6 +23,7 @@ export default function Navbar(props) {
     useEffect(()=>{ 
       console.log(location.pathname);
         if(location.pathname == '/'){
+          setPropertyPage(false);
           setHomePage(true);
         }
         else if(location.pathname == '/main-property'){
@@ -31,6 +32,7 @@ export default function Navbar(props) {
 
         }
         else {
+          setPropertyPage(false);
           setHomePage(false);
         }
         },[location])

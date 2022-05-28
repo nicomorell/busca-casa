@@ -1,33 +1,34 @@
 import "./Footer.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { ReactComponent as Instagram } from "../../assets/instagram.svg";
 import { ReactComponent as Facebook } from "../../assets/facebook.svg";
 import { ReactComponent as Twitter } from "../../assets/twitter.svg";
 
-import SearchBar from "../SearchBar/SearchBar"
-
-import { useHistory } from "react-router";
-import ListingType from "../ListingType/ListingType";
-import FeaturedRent from "../FeaturedRent/FeaturedRent";
-import FeaturedSell from "../FeaturedSell/FeaturedSell";
-
+import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 export default function Footer(props) {
   const proxy = process.env.REACT_APP_PROXY_PRODUCTION
     ? process.env.REACT_APP_PROXY_PRODUCTION
     : process.env.REACT_APP_PROXY_DEVELOPMENT;
+    const navigate = useNavigate();
 
+    const location = useLocation();
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  window.addEventListener('load', async () => {
-    let video = document.querySelector('video');
-    try {
-      await video.play();
-    } catch (err) {
-    }
-  });
+  const [registration, setRegistration] = useState(null);
+  
+  useEffect(()=>{ 
+    console.log(location.pathname);
+      if(location.pathname == '/sign-in' || location.pathname == '/register' ){
+        setRegistration(true);
+      }
+      else {
+        setRegistration(false);
+      }
+
+      },[location])
   return (
-    <div class = "footer-container">
+    <div class = {"footer-container " + (registration ? "hidden" : "")}>
       <div className = "footer-wrapper">
 
       <div>
